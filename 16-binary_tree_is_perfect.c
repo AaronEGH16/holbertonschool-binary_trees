@@ -16,7 +16,7 @@ int check_is_perfect(const binary_tree_t *tree)
 
 	if ((!(tree->left) && tree->right) || (tree->left && !(tree->right)))
 	{
-		flag = -1;
+		flag = -5;
 	}
 	site_l = check_is_perfect(tree->left);
 	site_r = check_is_perfect(tree->right);
@@ -37,6 +37,9 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 	if (tree == NULL)
 		return (0);
+
+	if (!tree->left && !tree->right)
+		return (1);
 
 	if (tree->left && tree->right)
 	{
